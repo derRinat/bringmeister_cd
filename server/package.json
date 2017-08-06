@@ -1,0 +1,18 @@
+{
+  "name": "bringmeister_server",
+  "version": "1.0.0",
+  "description": "Bringmeister CodeChallenge Server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rinat Borovskikh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^0.17.4"
+  }
+}
