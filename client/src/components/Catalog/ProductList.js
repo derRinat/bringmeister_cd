@@ -1,20 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Product from './Product';
+
 const ProductList = ({ data }) => (
-    <div>
-        { data &&
-            <div>
-                { data.map(product =>
-                    <div key={ product.id }>
-                        <h3>{ product.name }</h3>
-                        <p>Price: { product.price }</p>
-                    </div>
-                )}
-            </div>
-        }
-    </div>
-);
+    <section className="products">
+        { data.length > 0 && data.map(product =>
+            <Product data={ product} key={ product.id }/>
+        )}
+    </section>
+)
 
 ProductList.propTypes = {
     data: PropTypes.array.isRequired

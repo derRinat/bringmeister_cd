@@ -4,15 +4,14 @@
   "description": "Bringmeister CodeChallenge Server",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node index.js",
+    "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rinat Borovskikh",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3"
-  },
-  "devDependencies": {
-    "http-proxy-middleware": "^0.17.4"
+    "cors": "^2.8.4",
+    "express": "^4.15.3",
+    "got": "^7.1.0"
   }
 }

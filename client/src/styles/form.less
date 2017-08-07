@@ -1,0 +1,53 @@
+@import "variables.less";
+
+/** Buttons **/
+.btn {
+    border: none;
+    background: none;
+    display: block;
+    line-height: 50px;
+    padding: 0 30px;
+    margin: 25px auto;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1em;
+
+    &:hover {
+        transition: all .4s ease 0s;
+    }
+
+    &.btn-green {
+        background-color: @bg-green;
+        &:hover {
+            background-color: @bg-green-darken;
+        }
+    }
+
+    &.btn-blue {
+        background-color: @bg-blue;
+        &:hover {
+            background-color: @bg-blue-darken;
+        }
+    }
+
+    &.btn-red {
+        background-color: @bg-red;
+        &:hover {
+            background-color: @bg-red-darken;
+        }
+    }
+
+    &.btn-disabled {
+        background-color: #a1a1a1;
+        color: #848484;
+
+        &:hover {
+            background-color: #a1a1a1;
+            color: #848484;
+        }
+    }
+}

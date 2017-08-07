@@ -1,15 +1,12 @@
-const http = require('http');
-const express = require('express');
-const proxy = require('http-proxy-middleware');
-const app = express();
+const express   = require('express');
+const config    = require('./config');
+const cors      = require('cors');
+const app       = express();
+const proxyMiddleware = require('./middleware/proxy');
 
-const config = require('./config');
-const { target, changeOrigin } = config;
+app.use(cors());
+app.use('/', proxyMiddleware);
 
-app.use('/api', proxy({target, changeOrigin}));
-
-const port = process.env.PORT || config.port;
-
-http.createServer(app).listen(port, () => {
-    console.log('Server listening on:', port);
+app.listen(config.port, () => {
+    console.log(`Server started on port ${config.port}`);
 });

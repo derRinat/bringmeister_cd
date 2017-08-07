@@ -5,24 +5,31 @@ import { Link } from 'react-router-dom';
 
 import { loadProducts } from '../actions/productActions';
 
+import Loading from '../components/Common/Loading';
 import ProductList from '../components/Catalog/ProductList';
+import { DEFAULT_ZIPCODE } from '../configs/common';
 
 class Catalog extends Component {
 
     componentDidMount() {
-        const { loadProducts } = this.props;
-        loadProducts();
+        const { products, loadProducts } = this.props;
+
+        if(!products.length) {
+            const zipcode = DEFAULT_ZIPCODE;
+            loadProducts({ zipcode });
+        }
     }
 
     render() {
 
-        const { products } = this.props;
+        const { products, loading } = this.props;
+
+        if(loading) {
+            return <Loading />
+        }
 
         return(
-            <div>
-                <div>Catalog page</div>
-                <ProductList data = { products } />
-            </div>
+            <ProductList data = { products } />
         )
     }
 }
