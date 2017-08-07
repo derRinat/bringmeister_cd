@@ -8,7 +8,7 @@ class Product extends Component {
 
     get getImage() {
         const { data: { images: { list }}} = this.props;
-        return list[200];
+        return list[100]; // Bad...
     }
 
     render() {
@@ -17,16 +17,15 @@ class Product extends Component {
 
         return(
             <div className="product-card">
-                <div className="image">
+                <div className="text-center">
                     <img src={ this.getImage } alt={ data.name }/>
                 </div>
                 <div className="info">
                     <p>{ data.name }</p>
                     <span>{ data.prices.price } &euro;</span>
                 </div>
-                <div>
-                    <Link to={ "/detail/" + data.id } className="btn btn-green">{ Locale.trans('CATALOG_MORE') }</Link>
-                </div>
+
+                <Link to={ "/detail/" + data.id } className="btn btn-green">{ Locale.trans('CATALOG_MORE') }</Link> 
             </div>
         )
     }

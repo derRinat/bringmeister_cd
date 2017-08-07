@@ -3,11 +3,8 @@ import React from 'react';
 import Header from "./Header";
 
 const Main = ({ customer, nav, children, logout }) => (
-    <div className="main"> 
-        <header>
-            <Header />
-        </header>
-
+    <div className="main">
+        <Header />
         <section className="content">
             { children }
         </section>

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import Routers from './Routers';
 
-const Root = ({ store, history }) => (
+const Root = ({ store }) => (
 
     <Provider store={ store }>
         <div>

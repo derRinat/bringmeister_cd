@@ -22,12 +22,12 @@ class ProductInfo extends Component {
 
                 <div className="info">
                     <h3>{ data.name }</h3>
-                    <p className="articul">{ Locale.trans('DETAIL_ARTICUL') } { data.sku }</p>
+                    <p className="small">{ Locale.trans('DETAIL_ARTICUL') } { data.sku }</p>
 
                     { data.ingredients.text &&
                         <p>{ data.ingredients.text }</p>
                     }
-                    <p className="price">{ data.prices.price } &euro;</p>
+                    <p className="large">{ data.prices.price } &euro;</p>
                 </div>
 
                 <Button
@@ -35,7 +35,7 @@ class ProductInfo extends Component {
                     title={ Locale.trans('DETAIL_ADD_TO_CART') }
                     color="green"
                 />
-                <Link to="/catalog" className="btn-red">{ Locale.trans('DETAIL_BACK_TO_CATALOG') } </Link>
+                <Link to="/catalog" className="red">{ Locale.trans('DETAIL_BACK_TO_CATALOG') }</Link>
         </div>
         )
     }
