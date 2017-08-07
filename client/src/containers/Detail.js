@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { loadOneProduct } from '../actions/productActions';
 
@@ -28,14 +27,14 @@ class Detail extends Component {
         if(loading || !Object.keys(product).length) {
             return <Loading />
         }
-        
-        return(
-            <div>
-                <div className="detail">
-                    <ProductInfo data = { product } onClick={ this.onClick.bind(this)}/>
-                </div>
-            </div>
 
+        return(
+            <div className="detail">
+                <ProductInfo
+                    data = { product }
+                    onClick={ this.onClick.bind(this)}
+                />
+            </div>
         )
     }
 }
